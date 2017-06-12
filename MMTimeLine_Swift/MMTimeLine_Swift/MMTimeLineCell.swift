@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol MMTimeLineCellDelegate {
+protocol MMTimeLineCellDelegate: class {
     func orderTrackingCellDidFnishedLoad(cell: MMTimeLineCell)
 }
 
@@ -18,7 +18,7 @@ class MMTimeLineCell: UITableViewCell {
     let contentLabel = UILabel();
     var lineLayer = CAShapeLayer()
     var layout: MMTimeLineLayout?
-    var delegate: MMTimeLineCellDelegate?
+    weak var delegate: MMTimeLineCellDelegate?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
